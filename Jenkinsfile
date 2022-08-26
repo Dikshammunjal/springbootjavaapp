@@ -8,8 +8,8 @@ pipeline {
         
         stage('Build') { 
             steps {
-                cd intial
-                sh "mvn install -DskipTests" 
+                sh "cd intial"
+                sh "mvn package" 
             }
         }
         stage('Create docker image') {
