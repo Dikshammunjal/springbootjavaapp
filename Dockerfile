@@ -1,3 +1,4 @@
 FROM openjdk:8-jdk
-WORKDIR /u01/shared/var/jenkins_home/jobs/test1/workspace/initial
-ENTRYPOINT ["java","-jar","target/spring-boot-docker-initial-0.0.1-SNAPSHOT.jar"]
+ARG JAR_FILE=/u01/shared/var/jenkins_home/jobs/test1/workspace/initial/target/*.jar
+COPY ${JAR_FILE} app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
