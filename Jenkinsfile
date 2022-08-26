@@ -8,12 +8,12 @@ pipeline {
         
         stage('Build') { 
             steps {
-                dir ("initial"){
+                sh "pwd"
+                dir ('initial'){
+                    sh ("pwd")
+                    sh ("ls -ltr")
                     sh "mvn package"} 
-                sh ("pwd")
-                sh("ls -ltr")
-                sh ("cd initial")
-                                sh("ls -ltr")
+                
 
             }
         }
