@@ -67,6 +67,7 @@ pipeline {
                 env.MICROSERVICENAME=  "${params.MIRCROSERVICE_NAME}"
                 env.REGIONNAME= "${params.REGION}"
                 env.EMAILID = "${params.REGISTRY_EMAIL}"
+                env.PORT ="${params.PORT}"
                 }
                }
             }
@@ -82,7 +83,7 @@ pipeline {
 
 
             
-            sh '/u01/shared/scripts/pipeline/microservices/base_oke_template_jenkins/update_deploy_microservices.sh $REGIONNAME.ocir.io $USERNAME $PASSWORD $EMAILID $MICROSERVICENAME-ns $MICROSERVICENAME $IMAGE 8080 $MICROSERVICENAME-svc'
+            sh '/u01/shared/scripts/pipeline/microservices/base_oke_template_jenkins/update_deploy_microservices.sh $REGIONNAME.ocir.io $USERNAME $PASSWORD $EMAILID $MICROSERVICENAME-ns $MICROSERVICENAME $IMAGE $PORT $MICROSERVICENAME-svc'
                 
                }
             }
