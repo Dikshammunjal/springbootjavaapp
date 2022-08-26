@@ -10,6 +10,7 @@ pipeline {
             steps {
                 dir ("initial"){
                     sh "mvn package"} 
+                sh ("pwd")
             }
         }
         stage('Create docker image') {
