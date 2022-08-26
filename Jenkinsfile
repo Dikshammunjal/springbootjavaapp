@@ -80,8 +80,8 @@ pipeline {
             echo 'Deploy app to OKE Cluster'
 
 
-                
-            sh '/u01/shared/scripts/pipeline/microservices/twitter_repo/update_deploy_microservices.sh $REGIONNAME.ocir.io $USERNAME $PASSWORD $EMAILID $MICROSERVICENAME-ns $MICROSERVICENAME $IMAGE 80 $MICROSERVICENAME-svc'
+            
+            sh '/u01/shared/scripts/pipeline/microservices/base_oke_template_jenkins/update_deploy_microservices.sh $REGIONNAME.ocir.io $USERNAME $PASSWORD $EMAILID $MICROSERVICENAME-ns $MICROSERVICENAME $IMAGE 80 $MICROSERVICENAME-svc'
            
                }
             }
