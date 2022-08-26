@@ -11,6 +11,7 @@ pipeline {
                 dir ("initial"){
                     sh "mvn package"} 
                 sh ("pwd")
+                sh("ls -ltr")
             }
         }
         stage('Create docker image') {
