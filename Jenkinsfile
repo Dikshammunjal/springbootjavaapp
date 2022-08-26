@@ -8,8 +8,8 @@ pipeline {
         
         stage('Build') { 
             steps {
-                sh "cd intial"
-                sh "mvn package" 
+                dir ("initial"){
+                    sh "mvn package"} 
             }
         }
         stage('Create docker image') {
