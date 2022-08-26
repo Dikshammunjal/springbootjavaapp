@@ -1,2 +1,3 @@
 FROM openjdk:8-jdk
-ENTRYPOINT ["java","-jar","/initial/target/*.jar"]
+WORKDIR /initial
+ENTRYPOINT ["java","-jar","/target/*.jar"]
