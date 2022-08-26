@@ -77,23 +77,17 @@ pipeline {
             }
             }
             steps {
-                script{
-                def scmVars = checkout([
-                        $class: 'GitSCM',
-                        doGenerateSubmoduleConfigurations: false,
-                        userRemoteConfigs: [[
-                            url: "https://github.com/Dikshammunjal/base_oke_template_jenkins.git"
-                          ]],
-                        branches: [ [name: "*/main"] ]
-                      ])
+            sh 'git clone https://github.com/Dikshammunjal/base_oke_template_jenkins.git'
             echo 'Deploy app to OKE Cluster'
 
 
             
             sh '/u01/shared/scripts/pipeline/microservices/base_oke_template_jenkins/update_deploy_microservices.sh $REGIONNAME.ocir.io $USERNAME $PASSWORD $EMAILID $MICROSERVICENAME-ns $MICROSERVICENAME $IMAGE 80 $MICROSERVICENAME-svc'
-                }
+                
                }
             }
+        
+        
         
         }
 }
