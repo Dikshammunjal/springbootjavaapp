@@ -2,7 +2,7 @@ FROM openjdk:8-jdk
 #WORKDIR /opt/app
 #RUN addgroup --system spring && adduser --system spring -ingroup spring
 #USER spring:spring
-COPY target/*.jar app.jar
+COPY target/spring-boot-docker-initial-0.0.1-SNAPSHOT.jar app.jar
 ENTRYPOINT ["java","-jar","/app.jar"]
 
 #FROM openjdk:8-jdk
