@@ -1,5 +1,12 @@
 FROM openjdk:8-jdk
-WORKDIR .
+#WORKDIR /opt/app
+#RUN addgroup --system spring && adduser --system spring -ingroup spring
+#USER spring:spring
+ADD target/spring-boot-docker-initial-0.0.1-SNAPSHOT.jar app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
+
+#FROM openjdk:8-jdk
+#WORKDIR .
 
 # copy the project files
 #COPY ./pom.xml ./pom.xml
@@ -20,7 +27,9 @@ WORKDIR .
 
 #ARG JAR_FILE=initial/target/*.jar
 #COPY ${JAR_FILE} app.jar
-ENTRYPOINT ["java","-jar","/initial/target/*.jar"]
+#ENTRYPOINT ["java","-jar","/initial/target/*.jar"]
 
 #ENTRYPOINT ["java","-jar","initial/target/*.jar"]
+
+
 
