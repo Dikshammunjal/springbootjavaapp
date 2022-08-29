@@ -18,9 +18,9 @@ WORKDIR .
 # set the startup command to run your binary
 # CMD ["sh", "target/bin/start"]
 
-ARG JAR_FILE=initial/target/*.jar
-COPY ${JAR_FILE} app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+#ARG JAR_FILE=initial/target/*.jar
+#COPY ${JAR_FILE} app.jar
+ENTRYPOINT ["java","-jar","/initial/target/*.jar"]
 
 #ENTRYPOINT ["java","-jar","initial/target/*.jar"]
 
