@@ -9,10 +9,10 @@ pipeline {
         stage('Build') { 
             steps {
                 sh "pwd"
-                dir ('initial'){
+
                     sh ("pwd")
                     sh ("ls -ltr")
-                    sh "mvn package"} 
+                    sh "mvn package"
                 
 
             }
@@ -34,11 +34,10 @@ pipeline {
                         branches: [ [name: "*/${params.GIT_REPO_BRANCH}"] ]
                       ])
                     
-                dir ('initial'){
                     sh ("pwd")
                     sh ("ls -ltr")
                    sh "docker build -f Dockerfile -t ${params.MIRCROSERVICE_NAME}:${scmVars.GIT_COMMIT} ." 
-                } 
+                
     
                 
                 }
