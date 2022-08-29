@@ -10,7 +10,7 @@ FROM openjdk:8-jdk
 WORKDIR /usr/src/app
 ONBUILD ADD . /usr/src/app
 ONBUILD RUN mvn install
-ONBUILD ADD /usr/src/app/target/springbootdemo-0.0.1-SNAPSHOT.jar app.jar
+ONBUILD ADD /usr/src/app/target/spring-boot-docker-initial-0.0.1-SNAPSHOT.jar app.jar
 
 CMD ["java","-jar","/app.jar"]
 
