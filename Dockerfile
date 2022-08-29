@@ -1,19 +1,19 @@
 FROM openjdk:8-jdk
-WORKDIR .
+#WORKDIR .
 
 # copy the project files
-COPY ./pom.xml ./pom.xml
+#COPY ./pom.xml ./pom.xml
 
 # build all dependencies for offline use
-RUN mvn dependency:go-offline -B
+#RUN mvn dependency:go-offline -B
 
 # copy your other files
-COPY ./src ./src
+#COPY ./src ./src
 
 # build for release
 #RUN mvn package -DskipTests
-RUN mvn clean assembly:assembly
-EXPOSE 8080
+#RUN mvn clean assembly:assembly
+#EXPOSE 8080
 
 # set the startup command to run your binary
 # CMD ["sh", "target/bin/start"]
