@@ -1,5 +1,5 @@
 FROM openjdk:8-jdk
-#WORKDIR .
+WORKDIR .
 
 # copy the project files
 #COPY ./pom.xml ./pom.xml
