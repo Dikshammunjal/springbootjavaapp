@@ -4,18 +4,8 @@ FROM openjdk:8-jdk
 #RUN addgroup --system spring && adduser --system spring -ingroup spring
 #USER spring:spring
 #ARG JAR_FILE=target/*.jar
-#COPY target/spring-boot-docker-initial-0.0.1-SNAPSHOT.jar app.jar
-#ENTRYPOINT ["java","-jar","/app.jar"]
-
-
-
-WORKDIR /usr/src/app
-ONBUILD ADD . /usr/src/app
-ONBUILD RUN mvn install
-RUN echo $(ls -1 .)
-ONBUILD ADD /usr/src/app/target/spring-boot-docker-initial-0.0.1-SNAPSHOT.jar app.jar
-
-CMD ["java","-jar","/app.jar"]
+COPY target/spring-boot-docker-initial-0.0.1-SNAPSHOT.jar app.jar
+ENTRYPOINT ["java","-jar","app.jar"]
 
 
 
