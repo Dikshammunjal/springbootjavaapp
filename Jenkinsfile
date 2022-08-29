@@ -56,7 +56,7 @@ pipeline {
                         branches: [ [name: "*/${params.GIT_REPO_BRANCH}"] ]
                       ])
                 sh "docker login -u ${params.REGISTRY_USERNAME} -p ${params.REGISTRY_TOKEN} ${params.REGION}.ocir.io"
-                sh "docker tag twitterfeed:${scmVars.GIT_COMMIT} ${params.DOCKER_REPO}:${scmVars.GIT_COMMIT}"
+                sh "docker tag ${params.MIRCROSERVICE_NAME}:${scmVars.GIT_COMMIT} ${params.DOCKER_REPO}:${scmVars.GIT_COMMIT}"
                 sh "docker push ${params.DOCKER_REPO}:${scmVars.GIT_COMMIT}" 
                 env.GIT_COMMIT = scmVars.GIT_COMMIT
                 sh "export GIT_COMMIT=${env.GIT_COMMIT}"
